@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <button class="btn-home" onclick="location.href='landing.html'">Página Inicial</button>
+
+    <div class="main">
+        <div class="header">
+            <h1>Crie seus flashcards</h1>
+        </div>
+
+        <div class="progress-container">
+            <p>Cards vistos: 43%</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 43%;"></div>
+            </div>
+        </div>
+
+        <div class="card" data-title="Matemática">
+            <div class="image">
+                <img src="matematica.png" alt="Matemática">
+            </div>
+            <div class="title">
+                <h1>Matemática</h1>
+            </div>
+            <div class="des">
+                <p>Descrição: Estudo de números e equações</p>
+                <button class="ver-mais-btn">Ver mais</button>
+                <button class="excluir-btn">Excluir</button>
+            </div>
+        </div>
+
+        <div class="card" data-title="Física">
+            <div class="image">
+                <img src="fisica.png" alt="Física">
+            </div>
+            <div class="title">
+                <h1>Física</h1>
+            </div>
+            <div class="des">
+                <p>Descrição: Estudo da matéria e suas interações</p>
+                <button class="ver-mais-btn">Ver mais</button>
+                <button class="excluir-btn">Excluir</button>
+            </div>
+        </div>
+
+        <div class="card" data-title="Geografia">
+            <div class="image">
+                <img src="geografia.png" alt="Geografia">
+            </div>
+            <div class="title">
+                <h1>Geografia</h1>
+            </div>
+            <div class="des">
+                <p>Descrição: Estudo da Terra e seus fenômenos</p>
+                <button class="ver-mais-btn">Ver mais</button>
+                <button class="excluir-btn">Excluir</button>
+            </div>
+        </div>
+
+        <div class="card" data-title="História">
+            <div class="image">
+                <img src="historia.png" alt="História">
+            </div>
+            <div class="title">
+                <h1>História</h1>
+            </div>
+            <div class="des">
+                <p>Descrição: Estudo dos eventos do passado</p>
+                <button class="ver-mais-btn">Ver mais</button>
+                <button class="excluir-btn">Excluir</button>
+            </div>
+        </div>
+
+        <div class="Adicionar">
+            <button id="add-btn">Adicionar matéria</button>
+            <button id="edit-btn">Editar matéria</button>
+        </div>
+        
+    </div>
+
+    <div id="cardModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Adicionar Matéria</h2>
+            
+            <label for="cardTitle">Nome da Matéria:</label>
+            <input type="text" id="cardTitle" placeholder="Digite o nome da matéria">
+    
+            <label for="cardDescription">Descrição:</label>
+            <textarea id="cardDescription" placeholder="Digite a descrição"></textarea>
+    
+            <label for="cardImage">Escolher Imagem:</label>
+            <input type="file" id="cardImage">
+    
+            <label for="cardColor">Escolher Cor:</label>
+            <input type="color" id="cardColor" value="#ffffff">
+    
+            <button id="saveCardBtn">Salvar</button>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-edit">&times;</span>
+            <h2 id="edit-modal-title">Editar Matéria</h2>
+            <select id="editCardSelect"></select>
+            <label for="editCardTitle">Nome da Matéria:</label>
+            <input type="text" id="editCardTitle">
+            <label for="editCardDescription">Descrição:</label>
+            <textarea id="editCardDescription"></textarea>
+            <label for="editCardImage">Imagem:</label>
+            <input type="file" id="editCardImage">
+            <label for="editCardColor">Cor do Card:</label>
+            <input type="color" id="editCardColor">
+            <button id="saveEditBtn">Salvar Alterações</button>
+        </div>
+    </div>
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FlashLearn. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+
+</body>
+</html>

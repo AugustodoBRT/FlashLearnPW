@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login-flashLearn</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Faça login <br> E comece a criar seus FlashCards</h1>
+            <img src="estudando.svg" class="left-image" alt="estudando animação">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <form id="loginForm">
+                    <div class="textfield">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Usuário" required>  
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                    </div>
+                    <button type="submit" id="loginButton" class="btn-login">Login</button>
+                    <p class="register-message">Não possui uma conta? <a href="register.html">Registre-se</a></p>
+                </form>
+            </div>  
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FlashLearn. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+
+            const storedUsuario = localStorage.getItem('usuario');
+            const storedSenha = localStorage.getItem('senha');
+
+            if (usuario === storedUsuario && senha === storedSenha) {
+                window.location.href = 'home.html';
+            } else {
+                alert('Usuário ou senha incorretos.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="register.css">
+    <style>
+        dialog {
+            border: none;
+            border-radius: 5px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        dialog button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        dialog button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Faça login <br> E comece a criar seus FlashCards</h1>
+            <img src="estudando.svg" class="left-image" alt="estudando animação">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>REGISTRE-SE</h1>
+                <form id="registerForm">
+                    <div class="textfield">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuário" required>  
+                    </div>
+                    <div class="textfield">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                    </div>
+                    <div class="textfield">
+                        <label for="confirmar-senha">Confirmar Senha</label>
+                        <input type="password" name="confirmar-senha" id="confirmar-senha" placeholder="Confirmar Senha" required>
+                    </div>
+                    <div class="textfield">
+                        <label for="data-nascimento">Data de Nascimento</label>
+                        <input type="date" name="data-nascimento" required>
+                    </div>
+                    <button type="submit" class="btn-login">Registre-se</button>
+                    <p class="register-message">Já possui uma conta? <a href="login.html">Faça login</a></p>
+                </form>
+            </div>  
+        </div>
+    </div>
+
+    <dialog id="successDialog">
+        <p>Cadastro concluído com sucesso!</p>
+        <button id="closeDialog">Fechar</button>
+    </dialog>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FlashLearn. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('registerForm');
+        const dialog = document.getElementById('successDialog');
+        const closeDialogButton = document.getElementById('closeDialog');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmar-senha').value;
+
+            if (senha !== confirmarSenha) {
+                alert('As senhas não coincidem.');
+                return;
+            }
+
+            localStorage.setItem('usuario', usuario);
+            localStorage.setItem('senha', senha);
+
+            dialog.showModal();
+        });
+
+        closeDialogButton.addEventListener('click', function() {
+            dialog.close();
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

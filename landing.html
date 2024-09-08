@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>FlashLearn</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#features">Recursos</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Registre-se</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Aprenda de forma eficiente com nossos flashcards</h2>
+            <p>FlashLearn ajuda você a memorizar de maneira rápida e fácil. Experimente agora!</p>
+            <a href="register.html" class="btn">Comece agora</a>
+        </div>
+    </section>
+
+    <section id="features" class="container">
+        <h2>Recursos</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Interativo</h3>
+                <p>Nossos flashcards são interativos e fáceis de usar.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Personalizável</h3>
+                <p>Crie seus próprios conjuntos de flashcards personalizados.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Acessível</h3>
+                <p>Acesse seus flashcards de qualquer dispositivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>Sobre</h2>
+        <p>No FlashLearn, encontre uma vasta coleção de FlashCards interativos para diversas disciplinas. Crie, personalize e compartilhe FlashCards, e acesse recursos para otimizar seus estudos. Junte-se à nossa comunidade de aprendizes e transforme sua maneira de estudar!</p>
+        
+        <!-- Adicionando um vídeo explicativo -->
+        <video width="600" controls>
+            <source src="video.mp4.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contato</h2>
+        <form action="#">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FlashLearn. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
